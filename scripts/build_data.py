@@ -73,7 +73,7 @@ def main():
     l24 = fetched - timedelta(hours=24)
     l48 = fetched - timedelta(hours=48)
     msk = lambda s: parse_ts(s).astimezone(MSK).isoformat(timespec='seconds')
-    ddmm = lambda s: parse_ts(s).astimezone(MSK).strftime('%d.%m')
+    ddmm = lambda s: parse_ts(s).astimezone(MSK).strftime('%Y-%m-%d')  # ISO MSK date; UI formats per locale
 
     # ---------- ledgers ----------
     try:
@@ -102,7 +102,7 @@ def main():
             if parse_ts(ts) <= fetched - timedelta(hours=12):
                 prev = (ts, hist[ts])
         hist[fetched_s] = cnt
-        fi = {'count': cnt, 'label': fmt(cnt), 'as_of': fetched_s, 'stale': False}
+        fi = {'count': cnt, 'as_of': fetched_s, 'stale': False}
         if prev:
             fi['delta'] = cnt - prev[1]; fi['delta_since'] = prev[0]
         followers[k] = fi
@@ -110,13 +110,6 @@ def main():
     def handle_of(k):
         u = users.get(k)
         return '@' + (u['username'] if u else k)
-
-    def handle_label(k):
-        fi = followers.get(k)
-        if not fi: return handle_of(k)
-        s = f"{handle_of(k)} ({fi['label']}"
-        if 'delta' in fi: s += f", {sgn(fi['delta'])}"
-        return s + ')'
 
     # ---------- posts ----------
     def collect(files):
@@ -159,7 +152,6 @@ def main():
             'bookmarks': pm.get('bookmark_count', 0), 'media_note': mn,
             'text': text[:280], 'full_text': text, 'original_en': text,
             'hook': re.sub(r'\s+', ' ', re.sub(r'https://t\.co/\S+', '', text)).strip()[:200],
-            'views_label': fmt(pm.get('impression_count', 0)),
             'metrics_note': f'exact metrics from x MCP (impression_count) at fetch time {fetched_s}',
             'views_as_of': fetched_s, 'stale': False, 'is_quote': bool(q),
         }
@@ -170,7 +162,6 @@ def main():
                 if qp.get('created_at'): r['quote_of_date'] = ddmm(qp['created_at'])
                 if qp.get('author_id') and qp.get('author_id') == p.get('author_id'):
                     r['self_quote'] = True
-                    r['self_quote_label'] = 'самоцитата ' + r.get('quote_of_date', '')
         return r
 
     raw, ip, iu, md = collect(a.posts)
@@ -181,7 +172,7 @@ def main():
     for p in sorted(allp, key=lambda p: p['created_utc']):
         sig = (p['key'], re.sub(r'\W+', '', p['full_text'].lower())[:200])
         if sig in seen_text and sig[1]:
-            p['excluded_reason'] = 'дубль текста'; dups.append(p)
+            p['excluded_reason'] = 'duplicate'; dups.append(p)
         else:
             seen_text[sig] = p['id']
 
@@ -202,7 +193,6 @@ def main():
             p['views_first'] = p['views']; p['first_at'] = fetched_s; p['growth_since_first'] = 0
         fi = followers.get(p['key'])
         if fi: p['followers'] = fi
-        p['handle_label'] = handle_label(p['key'])
         p['is_you'] = p['key'] == op_user.lower()
 
     inday = lambda p: d0 <= parse_ts(p['posted_at']) < d1
@@ -222,7 +212,7 @@ def main():
         u = next((x for x in oiu.values() if x.get('username', '').lower() == v['key']), None)
         if u and u.get('public_metrics'):
             c = u['public_metrics']['followers_count']
-            v['followers'] = {'count': c, 'label': fmt(c), 'as_of': fetched_s, 'stale': False}
+            v['followers'] = {'count': c, 'as_of': fetched_s, 'stale': False}
         v['hook'] = v['handle'] + ': ' + v['hook']
 
     # ---------- trend keywords (from real post texts, >=5K views, >=2 authors) ----------
@@ -285,7 +275,7 @@ def main():
             prod *= (1 - w)
         tm = round(100 * (1 - prod))
         media = 'video' if 'video' in p['media_note'] else 'image' if ('photo' in p['media_note'] or 'gif' in p['media_note']) else p['media_note'].replace('text-only', 'text')
-        verdict = 'тренд' if tm >= 50 else ('визуал' if media in ('video', 'image') else 'автор/аудитория')
+        verdict = 'trend' if tm >= 50 else ('visual' if media in ('video', 'image') else 'audience')
         return {'trend_match': tm, 'verdict': verdict, 'matched_keywords': [k['keyword'] for k in matched][:5], 'media': media, 'note': '', 'topic': ''}
     for p in hits + virals:
         p['why_hit'] = why(p)
@@ -300,7 +290,6 @@ def main():
              'total_views': sum(p['views'] for p in ps), 'hit': bool(hp), 'is_you': k == op_user.lower(),
              'best_url': best['url'] if best else None, 'stale': False, 'posts': len(ps), 'hits': len(hp)}
         if k in followers: r['followers'] = followers[k]
-        r['handle_label'] = handle_label(k)
         roster.append(r)
     roster.sort(key=lambda r: (-r['views'], -r['total_views']))
     me = next(r for r in roster if r['is_you'])
@@ -313,17 +302,14 @@ def main():
         'self_quotes_counted': sum(1 for p in my_posts if p.get('self_quote')),
         'posts': [{k: p.get(k) for k in ('url', 'views', 'views_as_of', 'likes', 'reposts', 'replies', 'bookmarks', 'posted_at', 'is_quote')} for p in my_posts],
         'views_as_of': fetched_s, 'followers': followers.get(op_user.lower()),
-        'note': (f"No original posts by @{op_user} on {d0.strftime('%d.%m')} (00–24 MSK) yet · rank #{roster.index(me) + 1}/{len(roster)}" if not my_posts else ''),
+        'no_posts': not my_posts,
     }
 
     no_hits = []
     for r in roster:
         if r['hit'] or r['is_you']: continue
-        reason = (f"API returned 0 posts for {d0.strftime('%d.%m')} (replies/reposts excluded)" if r['posts'] == 0
-                  else f"{r['posts']} posts, all below 5k — best {r['views']:,} views")
-        nh = {'handle': r['handle'], 'reason': reason, 'max_views': r['views'], 'posts': r['posts']}
+        nh = {'handle': r['handle'], 'reason_code': 'no_posts' if r['posts'] == 0 else 'below_floor', 'max_views': r['views'], 'posts': r['posts']}
         if 'followers' in r: nh['followers'] = r['followers']
-        nh['handle_label'] = r['handle_label']
         no_hits.append(nh)
 
     # ---------- day ledger + leaderboards ----------
@@ -361,20 +347,16 @@ def main():
         for e in out:
             k = e['handle'].lstrip('@').lower()
             if k in followers: e['followers'] = followers[k]
-            e['handle_label'] = handle_label(k)
         return out
     tracked = sorted(L['days'])
     dD = datetime.fromisoformat(day).date()
     week_days = [d for d in tracked if (dD - datetime.fromisoformat(d).date()).days in range(0, 7)]
     month_days = [d for d in tracked if d[:7] == day[:7] and d <= day]
-    mname = lambda d: datetime.fromisoformat(d).strftime('%b %-d')
     leaderboards = {
         'as_of': day, 'tracking_start': L['tracking_start'], 'days_included': week_days, 'month_days_included': month_days,
         'computed_from': 'latest refreshed views per post; same-text duplicates excluded (self-quotes count)', 'views_as_of': fetched_s,
-        'week': {'label': f"Rolling week · {mname(week_days[0])}–{mname(week_days[-1])}" + (f" (tracking since {mname(L['tracking_start'])})" if len(week_days) < 7 else ''),
-                 'range': [week_days[0], week_days[-1]], 'entries': board(week_days)},
-        'month': {'label': f"Month · {datetime.fromisoformat(day).strftime('%B %Y')}" + (f" (tracking since {mname(L['tracking_start'])})" if L['tracking_start'][:7] == day[:7] else ''),
-                  'range': [month_days[0], month_days[-1]], 'entries': board(month_days)},
+        'week': {'range': [week_days[0], week_days[-1]], 'entries': board(week_days)},
+        'month': {'range': [month_days[0], month_days[-1]], 'entries': board(month_days)},
     }
     all_time = {'range': [tracked[0], tracked[-1]], 'entries': board(tracked)}
 
@@ -392,12 +374,12 @@ def main():
             hrs = round((parse_ts(ts[-1]) - parse_ts(base_ts)).total_seconds() / 3600)
             yh.append({'id': pid, 'handle': e['handle'], 'name': e['name'], 'url': f"https://x.com/{e['handle'].lstrip('@')}/status/{pid}",
                        'is_you': k == op_user.lower(), 'views': cur['views'], 'views_as_of': ts[-1], 'snapshots': len(ts), 'stale': False,
-                       'g24': g, 'g24_since': base_ts, 'g24_hours': hrs, 'g24_label': f"{sgn(g)} за {hrs} ч",
+                       'g24': g, 'g24_since': base_ts, 'g24_hours': hrs,
                        'posted_at': L['posts'][pid].get('posted_at'), 'followers': followers.get(k)})
     yh.sort(key=lambda h: -(h['g24'] or 0))
-    yesterday = {'date': yday, 'label': f"Вчера ({datetime.fromisoformat(yday).strftime('%d.%m')}) — рост за 24 ч", 'refreshed_at': fetched_s,
+    yesterday = {'date': yday, 'refreshed_at': fetched_s,
                  'hits': yh, 'total_views': sum(h['views'] for h in yh), 'total_g24': sum(h['g24'] for h in yh), 'excluded': 0,
-                 'note': '' if yh else 'needs a second daily snapshot in data/ledger.json'}
+                 'needs_second_snapshot': not yh}
 
     # ---------- last 24h ----------
     lp = sorted([p for p in allp if parse_ts(p['posted_at']) >= l24 and not p.get('excluded_reason')], key=lambda p: -p['views'])
@@ -405,14 +387,13 @@ def main():
         p['age_h'] = round((fetched - parse_ts(p['posted_at'])).total_seconds() / 3600, 1)
         p['hit'] = p['views'] >= T5; p['star'] = p['views'] >= T10
     last24h = {'start': l24.isoformat(timespec='seconds'), 'end': fetched_s, 'fetched_at': fetched_s,
-               'label': f"последние 24 ч · {l24.strftime('%d.%m %H:%M')} – {fetched.strftime('%d.%m %H:%M')} MSK",
-               'note': 'операторы + watchlist, без ответов и репостов', 'posts': lp,
+               'scope': 'operator+watchlist; replies and reposts excluded', 'posts': lp,
                'hits_count': sum(1 for p in lp if p['hit']), 'star_count': sum(1 for p in lp if p['star']), 'excluded': 0,
                'total_views': sum(p['views'] for p in lp)}
 
     # ---------- narrative-free summaries (computed only) ----------
-    patterns = [f"{k['keyword']} ({k['authors']} authors)" for k in final[:6]]
-    tm = [p for p in hits if p['why_hit']['verdict'] == 'тренд']
+    patterns = [{'keyword': k['keyword'], 'authors': k['authors']} for k in final[:6]]
+    tm = [p for p in hits if p['why_hit']['verdict'] == 'trend']
     med = lambda xs: int(statistics.median(xs)) if xs else 0
     verd = defaultdict(int)
     for p in hits + virals: verd[p['why_hit']['verdict']] += 1
@@ -423,22 +404,17 @@ def main():
         news = [{'name': x.get('name'), 'url': x.get('url'), 'updated_at': x.get('updated_at'), 'category': x.get('category')} for x in n]
     trend_radar = {
         'date': day, 'title': 'Trend radar',
-        'window': {'end': fetched_s, 'label24': f"{l24.strftime('%d.%m %H:%M')} – {fetched.strftime('%d.%m %H:%M')} MSK",
-                   'label48': f"{l48.strftime('%d.%m %H:%M')} – {fetched.strftime('%d.%m %H:%M')} MSK"},
+        'window': {'end': fetched_s, 'start24': l24.isoformat(timespec='seconds'), 'start48': l48.isoformat(timespec='seconds')},
         'corpus': {'posts': len(corpus), 'min_views': T5, 'lanes': {'watchlist': len(corpus) - len(virals), 'outsider': len(virals)}},
         'summary': {
-            'headline': (f"{len(hits)} watchlist hits ≥5K on {d0.strftime('%d.%m')}; {len(tm)} of them match ≥50% of the 48h keyword set. "
-                         f"Median views: trend-matched {fmt(med([p['views'] for p in tm]))} vs other {fmt(med([p['views'] for p in hits if p not in tm]))}.") if hits else 'No watchlist hits yet.',
-            'takeaway': ('Top keywords right now: ' + ', '.join(k['keyword'] for k in final[:5])) if final else '',
+            'date': day, 'hits': len(hits), 'trend_hits': len(tm),
+            'median_trend': med([p['views'] for p in tm]), 'median_other': med([p['views'] for p in hits if p not in tm]),
+            'top_keywords': [k['keyword'] for k in final[:5]],
             'stats': {'all': {'n': len(hits) + len(virals), 'verdicts': dict(verd)}},
         },
         'topics': [], 'ideas': [], 'articles': [],
         'why_hit': [{'id': p['id'], 'handle': p['handle'], 'lane': 'outsider' if p in virals else 'watchlist', 'views': p['views'], **p['why_hit']} for p in hits + virals],
-        'news': news,
-        'legend': ('trend match 0-100% = 1-∏(1-w) over matched keywords from the 48h corpus (rank 1-10 w=0.35, 11-25 w=0.22, 26-40 w=0.12); '
-                   'a keyword counts only if ≥2 different authors used it. Verdict: ≥50% → тренд; else image/video → визуал; else автор/аудитория. '
-                   'Topics/ideas are not auto-generated in this build. X News stories (search_news, AI, 48h): '
-                   + '; '.join(f"{x['name']}" for x in news)),
+        'news': news,  # legend text lives in i18n.js (key legend_text)
     }
 
     def strip(p):
@@ -456,17 +432,16 @@ def main():
         'watchlist_brief': {'intro': '', 'recurring_names': [], 'structures': [], 'phrases': [], 'draft_rules': []},
         'hits_count': len(hits), 'hits_count_raw': len(hits) + len(excluded), 'star_count': sum(1 for p in hits if p['highlight']),
         'operator': {'handle': '@' + op_user, 'name': (users.get(op_user.lower()) or {}).get('name', cfg.get('operator_name', op_user)),
-                     'profile_url': f'https://x.com/{op_user}', 'followers': followers.get(op_user.lower()), 'handle_label': handle_label(op_user.lower())},
+                     'profile_url': f'https://x.com/{op_user}', 'followers': followers.get(op_user.lower())},
         'day_roster': roster, 'you_rank': you_rank, 'leaderboards': leaderboards, 'yesterday': yesterday, 'all_time': all_time,
         'followers': followers,
         'refresh': {'ts': fetched_s, 'requested': len(allp), 'refreshed': len(allp), 'stale_this_fetch': 0, 'stale_total': 0, 'stale_failed': 0,
                     'stale_age': None, 'stale': 0, 'followers': len(followers), 'stale_ids': [], 'note': 'single snapshot via x MCP get_posts_by_ids'},
         'window': {'type': 'calendar_day', 'date': day, 'start': d0.isoformat(), 'end': d1.isoformat(), 'views_as_of': fetched_s,
-                   'label': f"за {d0.strftime('%d.%m')}, 00:00–24:00 MSK · просмотры на {fetched.strftime('%d.%m %H:%M')} MSK",
-                   'views_note': 'просмотры = всего у поста на момент снимка (не за сутки); рост за 24 ч — отдельно'},
+                   'views_basis': 'lifetime_at_snapshot'},
         'excluded_hits': [strip(p) for p in excluded],
         'exclusions': {'self_quotes': 0, 'self_quotes_counted': sum(1 for p in hits if p.get('self_quote')), 'duplicates': len(excluded),
-                       'promoted_near_miss': [], 'rule': 'self-quotes count (labelled «самоцитата DD.MM»); only same-text duplicates are excluded'},
+                       'promoted_near_miss': [], 'rule': 'self_quotes_counted_duplicates_excluded'},
         'last24h': last24h,
         'trend_keywords': {'date': day, 'window': 'D hits + last-24h posts ≥5k + outsiders (48h)',
                            'method': 'sum(log10 views) over distinct posts × author count × 1.3 for 2-word phrases; ≥2 authors', 'keywords': final[:25]},
