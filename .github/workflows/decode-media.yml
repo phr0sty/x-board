@@ -1,0 +1,37 @@
+name: Decode persona media
+
+on:
+  workflow_dispatch:
+
+jobs:
+  decode:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decode base64 sources into media mp4s
+        run: |
+          set -euo pipefail
+          mkdir -p media
+          for prefix in tt-ninja-drop yt-decks-mix fb-synth-session; do
+            src="media/src/${prefix}.mp4.b64"
+            out="media/${prefix}.mp4"
+            echo "Decoding ${src} -> ${out}"
+            base64 -d "$src" > "$out"
+            header="$(dd if="$out" bs=1 skip=4 count=4 status=none)"
+            if [ "$header" != "ftyp" ]; then
+              echo "Invalid mp4 header in ${out}: ${header}"
+              exit 1
+            fi
+            ls -l "$out"
+          done
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add media/tt-ninja-drop.mp4 media/yt-decks-mix.mp4 media/fb-synth-session.mp4
+          if git diff --cached --quiet; then
+            echo "No media changes to commit"
+            exit 0
+          fi
+          git commit -m "Add AI persona videos to media/ for Buffer hosting"
+          git push
