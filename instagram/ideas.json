@@ -1,0 +1,172 @@
+{
+ "updated": "2026-11-20",
+ "note": "Drafts only. Nothing is posted automatically.",
+ "ideas": [
+  {
+   "id": "ig1",
+   "title": "The quiet backspin",
+   "format": "gear",
+   "length": "Reel · 12–18s",
+   "modeled_on": {
+    "handle": "djcarloatendido",
+    "title": "Cheap DJ Gear Backspin Test (TikTok signal)",
+    "views": 2000000,
+    "url": "https://www.tiktok.com/@djcarloatendido/video/7581948465505242376",
+    "as_of": "2026-11-20"
+   },
+   "hook": "One line, lower third, serif: \"Tested.\"",
+   "script": [
+    "Overhead shot, warm low light, deck and hands only",
+    "One clean backspin into the drop",
+    "Hold the final frame for 2s; no talking"
+   ],
+   "caption": "Tested. Approved.",
+   "hashtags": "#djgear #djlife #rekordbox #analoguelife #studioaesthetic"
+  },
+  {
+   "id": "ig2",
+   "title": "Carousel: the setup, itemised",
+   "format": "gear",
+   "length": "Carousel · 6–8 slides",
+   "modeled_on": {
+    "handle": "andrewhuang",
+    "title": "The most innovative music tools of the year (YouTube signal)",
+    "views": 318816,
+    "url": "https://www.youtube.com/watch?v=tJOmw4eM2HI",
+    "as_of": "2026-11-20"
+   },
+   "hook": "Slide 1: \"The setup. Itemised.\"",
+   "script": [
+    "Slide 1: full desk, clean, top-down",
+    "Slides 2–6: one item each on a neutral background, name + one-line why",
+    "Last slide: 'Save for your next upgrade'"
+   ],
+   "caption": "Everything on the desk, and why it earned its place.",
+   "hashtags": "#studiosetup #djsetup #synthpedals #musicgear #desksetup"
+  },
+  {
+   "id": "ig3",
+   "title": "Dry / wet, side by side",
+   "format": "gear",
+   "length": "Reel · 10–15s",
+   "modeled_on": {
+    "handle": "andrewhuang",
+    "title": "Verso Instruments clip (TikTok signal)",
+    "views": 1700000,
+    "url": "https://www.tiktok.com/@andrewhuang/video/7281709861451074822",
+    "as_of": "2026-11-20"
+   },
+   "hook": "Text: \"Dry.\" … then \"Wet.\"",
+   "script": [
+    "Split screen or hard cut: dry loop, then pedal on",
+    "Macro shot of one knob turning",
+    "Loop seamlessly so it replays"
+   ],
+   "caption": "Dry or wet.",
+   "hashtags": "#synthpedals #guitarpedals #sounddesign #ambient"
+  },
+  {
+   "id": "ig4",
+   "title": "One-take mix, black & white",
+   "format": "transition",
+   "length": "Reel · 30–45s",
+   "modeled_on": {
+    "handle": "jameshype",
+    "title": "The unedited version, no cuts… (TikTok signal)",
+    "views": 1940,
+    "url": "https://www.tiktok.com/@jameshype/video/7710331878917623072",
+    "as_of": "2026-11-20"
+   },
+   "hook": "Text: \"No cuts.\"",
+   "script": [
+    "Monochrome grade, single angle",
+    "One continuous transition between two tracks",
+    "End on hands leaving the mixer"
+   ],
+   "caption": "One take.",
+   "hashtags": "#djmix #onetake #housemusic #vinylvibes"
+  },
+  {
+   "id": "ig5",
+   "title": "Stems, explained in 3 frames",
+   "format": "tutorial",
+   "length": "Carousel · 3–5 slides",
+   "modeled_on": {
+    "handle": "djcarloatendido",
+    "title": "using Stems for DJing has three big problems… (TikTok signal)",
+    "views": 52300,
+    "url": "https://www.tiktok.com/@djcarloatendido/video/7675498091058892050",
+    "as_of": "2026-11-20"
+   },
+   "hook": "Slide 1: \"Stems. Three rules.\"",
+   "script": [
+    "One rule per slide, big serif type on cream",
+    "Final slide: screen shot of your Rekordbox stems layout"
+   ],
+   "caption": "Three rules for stems. Save it.",
+   "hashtags": "#rekordbox #stems #djtips #djeducation"
+  },
+  {
+   "id": "ig6",
+   "title": "Crowd moment, cinematic",
+   "format": "live",
+   "length": "Reel · 8–15s",
+   "modeled_on": {
+    "handle": "johnsummit",
+    "title": "been wanting to share this with you guys… (TikTok signal)",
+    "views": 1100000,
+    "url": "https://www.tiktok.com/@johnsummit/video/7709917484056317214",
+    "as_of": "2026-11-20"
+   },
+   "hook": "No text for the first 3 seconds; let the drop hit.",
+   "script": [
+    "Shoot from behind the decks toward the room",
+    "Slow-mo the drop (50%), then real-time",
+    "Single word caption overlay at the end"
+   ],
+   "caption": "Tonight.",
+   "hashtags": "#djlife #nightlife #housemusic #clubculture"
+  },
+  {
+   "id": "ig7",
+   "title": "Before / after: the echo out",
+   "format": "tutorial",
+   "length": "Reel · 15–25s",
+   "modeled_on": {
+    "handle": "digitaldjtips",
+    "title": "You're Doing The Echo Out Wrong (YouTube signal)",
+    "views": 19826,
+    "url": "https://www.youtube.com/watch?v=hAWc4PQG6gM",
+    "as_of": "2026-11-20"
+   },
+   "hook": "Text: \"Before.\" / \"After.\"",
+   "script": [
+    "Play the sloppy echo out",
+    "Then the clean one",
+    "Close-up of the one button that changes it"
+   ],
+   "caption": "The difference is one button.",
+   "hashtags": "#djtips #djskills #rekordbox"
+  },
+  {
+   "id": "ig8",
+   "title": "Gear still life",
+   "format": "gear",
+   "length": "Single photo + Reel cover",
+   "modeled_on": {
+    "handle": "Hainbach",
+    "title": "This Synth From India Has No Filter (YouTube signal)",
+    "views": 42307,
+    "url": "https://www.youtube.com/watch?v=eP2gXmGKvmw",
+    "as_of": "2026-11-20"
+   },
+   "hook": "Caption opens: \"No filter. Only fuzz.\"",
+   "script": [
+    "Shoot one pedal like a product ad: hard side light, seamless background",
+    "Post as a photo, then a 7-second Reel of its sound"
+   ],
+   "caption": "Objects that make noise.",
+   "hashtags": "#pedalboard #synth #stilllife #musicgear"
+  }
+ ]
+}
