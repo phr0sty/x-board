@@ -1,0 +1,203 @@
+{
+ "updated": "2026-11-20",
+ "note": "Drafts only. Nothing is posted automatically.",
+ "ideas": [
+  {
+   "id": "tt1",
+   "title": "Cheap gear stress test",
+   "format": "gear",
+   "length": "15–25s",
+   "modeled_on": {
+    "handle": "djcarloatendido",
+    "title": "Cheap DJ Gear Backspin Test",
+    "views": 2000000,
+    "url": "https://www.tiktok.com/@djcarloatendido/video/7581948465505242376",
+    "as_of": "2026-11-20"
+   },
+   "hook": "\"Can a cheap controller survive THIS?\"",
+   "script": [
+    "0–2s: tight shot of your hand over the jog wheel, text on screen: 'cheap gear test'",
+    "2–8s: normal mix, then a hard backspin",
+    "8–15s: second backspin + echo out, react face to camera",
+    "15–20s: verdict text: 'it survived / it did not'"
+   ],
+   "caption": "would you trust this in a club? 👀",
+   "hashtags": "#dj #djtok #djgear #backspin #rekordbox #djtips"
+  },
+  {
+   "id": "tt2",
+   "title": "Two-genre transition",
+   "format": "transition",
+   "length": "20–35s",
+   "modeled_on": {
+    "handle": "djcarloatendido",
+    "title": "Insane “Not Like Us” to “Gasolina” Transition",
+    "views": 2400000,
+    "url": "https://www.tiktok.com/@djcarloatendido/video/7465816393003371783",
+    "as_of": "2026-11-20"
+   },
+   "hook": "\"Nobody expected these two songs to blend…\"",
+   "script": [
+    "0–3s: song A chorus playing, text: 'Song A → Song B?'",
+    "3–15s: show the EQ/filter moves up close",
+    "15–25s: the drop of song B lands; cut to your reaction",
+    "Last 2s: text 'part 2?'"
+   ],
+   "caption": "comment two songs and i'll try to blend them next 🎧",
+   "hashtags": "#djtransition #mashup #djtok #djtricks #rekordbox"
+  },
+  {
+   "id": "tt3",
+   "title": "Rekordbox stems hack",
+   "format": "tutorial",
+   "length": "25–45s",
+   "modeled_on": {
+    "handle": "djcarloatendido",
+    "title": "using Stems for DJing has three big problems…",
+    "views": 52300,
+    "url": "https://www.tiktok.com/@djcarloatendido/video/7675498091058892050",
+    "as_of": "2026-11-20"
+   },
+   "hook": "\"Stop doing this in Rekordbox 🛑\"",
+   "script": [
+    "0–3s: screen-record + face cam, big text hook",
+    "3–20s: show the wrong way (vocals clashing), then the stems fix (drop vocals on track A)",
+    "20–35s: play the clean result",
+    "End: 'save this for your next set'"
+   ],
+   "caption": "save this before your next set 💾",
+   "hashtags": "#rekordbox #stems #djtips #djtutorial #beginnerdj"
+  },
+  {
+   "id": "tt4",
+   "title": "Synth pedal sound reveal",
+   "format": "gear",
+   "length": "10–20s",
+   "modeled_on": {
+    "handle": "andrewhuang",
+    "title": "Jaw and brain still on the floor since exploring Verso Instruments",
+    "views": 1700000,
+    "url": "https://www.tiktok.com/@andrewhuang/video/7281709861451074822",
+    "as_of": "2026-11-20"
+   },
+   "hook": "\"This pedal turns a boring loop into THIS\"",
+   "script": [
+    "0–3s: play a dry, plain loop",
+    "3–5s: stomp the pedal on camera (close-up)",
+    "5–15s: the processed sound, slowly turn one knob",
+    "End: text 'dry vs wet — which one?'"
+   ],
+   "caption": "dry or wet? 🎛️ be honest",
+   "hashtags": "#synthtok #guitarpedals #synth #musicgear #producer"
+  },
+  {
+   "id": "tt5",
+   "title": "Learn one thing fast",
+   "format": "tutorial",
+   "length": "20–30s",
+   "modeled_on": {
+    "handle": "busyworksbeats",
+    "title": "Learn Music Theory 10X Faster than any Music University 🎹",
+    "views": 727700,
+    "url": "https://www.tiktok.com/@busyworksbeats/video/7145126014388112686",
+    "as_of": "2026-11-20"
+   },
+   "hook": "\"The 1 DJ trick that makes your mixes sound pro\"",
+   "script": [
+    "0–2s: hook text + you pointing at the mixer",
+    "2–20s: one trick only (e.g. phrase-matching: count 32 beats, mix on the 1)",
+    "20–28s: before vs after audio",
+    "End: 'follow for trick #2'"
+   ],
+   "caption": "trick #1 of 10 🔁",
+   "hashtags": "#djtips #learntodj #djtok #musictheory #djtutorial"
+  },
+  {
+   "id": "tt6",
+   "title": "Read the crowd POV",
+   "format": "tutorial",
+   "length": "20–40s",
+   "modeled_on": {
+    "handle": "digitaldjtips",
+    "title": "How do DJs read a crowd and know exactly what to play next?",
+    "views": 47500,
+    "url": "https://www.tiktok.com/@digitaldjtips/video/7578968494268632351",
+    "as_of": "2026-11-20"
+   },
+   "hook": "\"How DJs know what to play next 🧐\"",
+   "script": [
+    "0–3s: POV shot from behind the decks",
+    "3–25s: voice-over 3 signals: heads nodding, people leaving the floor, phones out",
+    "25–35s: show the track you switch to",
+    "End: 'what do you watch for?'"
+   ],
+   "caption": "DJs, what do you look for? 👇",
+   "hashtags": "#djlife #djtips #djtok #housemusic"
+  },
+  {
+   "id": "tt7",
+   "title": "Weird controller, real skill",
+   "format": "gear",
+   "length": "15–25s",
+   "modeled_on": {
+    "handle": "djtechtools",
+    "title": "Mad Zach likes arcade buttons for a very specific, practical skill",
+    "views": 296000,
+    "url": "https://www.tiktok.com/@djtechtools/video/7486170737397599531",
+    "as_of": "2026-11-20"
+   },
+   "hook": "\"I finger-drummed this whole beat on pads 🥁\"",
+   "script": [
+    "0–2s: hands on pads, fast",
+    "2–15s: build the beat live, layer by layer",
+    "15–20s: zoom out to show the setup",
+    "End: text 'should I do a full set like this?'"
+   ],
+   "caption": "full set on pads? y/n",
+   "hashtags": "#fingerdrumming #beatmaker #djtok #producer #mpc"
+  },
+  {
+   "id": "tt8",
+   "title": "Crowd moment caption",
+   "format": "live",
+   "length": "10–20s",
+   "modeled_on": {
+    "handle": "johnsummit",
+    "title": "been wanting to share this with you guys for a while now…",
+    "views": 1100000,
+    "url": "https://www.tiktok.com/@johnsummit/video/7709917484056317214",
+    "as_of": "2026-11-20"
+   },
+   "hook": "\"I wasn't ready for this drop at my house party\"",
+   "script": [
+    "0–3s: phone clip from behind the decks right before the drop",
+    "3–12s: the drop + crowd/friends reacting",
+    "12–18s: cut to you laughing",
+    "Keep text minimal; the moment is the hook"
+   ],
+   "caption": "this is why i DJ 🫶",
+   "hashtags": "#djlife #houseparty #dj #edm #crowd"
+  },
+  {
+   "id": "tt9",
+   "title": "8-deck challenge (mini)",
+   "format": "transition",
+   "length": "30–45s",
+   "modeled_on": {
+    "handle": "jameshype",
+    "title": "The unedited version, no cuts. Using all 8 decks…",
+    "views": 1940,
+    "url": "https://www.tiktok.com/@jameshype/video/7710331878917623072",
+    "as_of": "2026-11-20"
+   },
+   "hook": "\"Unedited. No cuts. 4 decks at once.\"",
+   "script": [
+    "0–3s: wide shot, text 'no cuts'",
+    "3–35s: one-take mix using every deck you have",
+    "Last 5s: stop, exhale, look at camera"
+   ],
+   "caption": "one take. how many mistakes did you spot? 👀",
+   "hashtags": "#djtok #oneTake #dj #rekordbox #mashup"
+  }
+ ]
+}
