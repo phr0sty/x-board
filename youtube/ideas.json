@@ -1,0 +1,202 @@
+{
+ "updated": "2026-11-20",
+ "note": "Drafts only. Nothing is posted automatically.",
+ "ideas": [
+  {
+   "id": "yt1",
+   "title": "Best gear of the year (budget edition)",
+   "format": "gear",
+   "length": "10–14 min",
+   "modeled_on": {
+    "handle": "andrewhuang",
+    "title": "The most innovative music tools of the year",
+    "views": 318816,
+    "url": "https://www.youtube.com/watch?v=tJOmw4eM2HI",
+    "as_of": "2026-11-20"
+   },
+   "hook": "\"These were the music tools that actually changed how I make music this year.\"",
+   "script": [
+    "Cold open: 5-second sound of each item back-to-back",
+    "Ranked list of 6–8 items you own or can try (decks, pedals, plugins, Rekordbox features)",
+    "For each: 20s demo, 1 pro, 1 con, price",
+    "Finish with your #1 and a call to comment theirs"
+   ],
+   "caption": "The tools that mattered most this year, from a DJ/synth-pedal setup. What was your #1?",
+   "hashtags": "#musicgear #djgear #synth #producer #gearoftheyear"
+  },
+  {
+   "id": "yt2",
+   "title": "Honest review of a hyped cheap thing",
+   "format": "gear",
+   "length": "8–12 min",
+   "modeled_on": {
+    "handle": "VenusTheory",
+    "title": "The Stupid End of Spitfire LABS",
+    "views": 281725,
+    "url": "https://www.youtube.com/watch?v=gxkQIaa41tM",
+    "as_of": "2026-11-20"
+   },
+   "hook": "\"Everyone says this free/cheap tool is amazing. Here's the dumb part nobody mentions.\"",
+   "script": [
+    "0:00 hook + bold claim",
+    "0:30 what it promises",
+    "2:00 three real tests in your own track",
+    "6:00 where it falls apart",
+    "8:00 verdict + who should still use it"
+   ],
+   "caption": "Honest take after a week with it.",
+   "hashtags": "#musicproduction #plugins #review #producer"
+  },
+  {
+   "id": "yt3",
+   "title": "\"The thing that IS the computer\" format",
+   "format": "gear",
+   "length": "10–15 min",
+   "modeled_on": {
+    "handle": "DoctorMix",
+    "title": "The Audio Interface That IS the Computer",
+    "views": 225664,
+    "url": "https://www.youtube.com/watch?v=wGtxnDa0Zhk",
+    "as_of": "2026-11-20"
+   },
+   "hook": "\"Can I play a full DJ set with no laptop at all?\"",
+   "script": [
+    "Show the standalone setup (or Rekordbox on the smallest device you have)",
+    "Play 3 short mixes",
+    "Show the limits: library, effects, latency",
+    "Verdict: would you gig with it?"
+   ],
+   "caption": "No laptop, full set. Did it hold up?",
+   "hashtags": "#djset #standalone #rekordbox #djgear"
+  },
+  {
+   "id": "yt4",
+   "title": "You're doing X wrong (DJ fix)",
+   "format": "tutorial",
+   "length": "6–9 min + 1 Short",
+   "modeled_on": {
+    "handle": "digitaldjtips",
+    "title": "You're Doing The Echo Out Wrong (This Forgotten Button Fixes It)",
+    "views": 19826,
+    "url": "https://www.youtube.com/watch?v=hAWc4PQG6gM",
+    "as_of": "2026-11-20"
+   },
+   "hook": "\"Your echo out sounds amateur. One button fixes it.\"",
+   "script": [
+    "Play the bad version",
+    "Explain why (timing / filter / beat FX)",
+    "Show the fix slowly, then at full speed",
+    "Cut the 40-second version as a Short"
+   ],
+   "caption": "The one-button echo-out fix. Short version on my channel.",
+   "hashtags": "#djtips #djtutorial #echoout #rekordbox"
+  },
+  {
+   "id": "yt5",
+   "title": "Review a brand-new release in 24h",
+   "format": "gear",
+   "length": "10–14 min",
+   "modeled_on": {
+    "handle": "Loopop",
+    "title": "Superlative SB-01 Review // Is there room for a premium analog SH-101 clone?",
+    "views": 12969,
+    "url": "https://www.youtube.com/watch?v=rF2OfEAySbU",
+    "as_of": "2026-11-20"
+   },
+   "hook": "\"Is there room for another one of these?\"",
+   "script": [
+    "Pick a just-announced controller, pedal or plugin update (e.g. a new Rekordbox or Live 13 feature)",
+    "Upload within 24–48h of release",
+    "Structure: what's new / 3 sound demos / who it's for / verdict",
+    "Title with a question"
+   ],
+   "caption": "First look: is it worth it?",
+   "hashtags": "#firstlook #musicgear #synth #djcontroller"
+  },
+  {
+   "id": "yt6",
+   "title": "Price contrast title",
+   "format": "gear",
+   "length": "8–12 min",
+   "modeled_on": {
+    "handle": "DoctorMix",
+    "title": "This Synth Costs $150,000. Thank God for Plugins",
+    "views": 73738,
+    "url": "https://www.youtube.com/watch?v=PAThL1gYwD0",
+    "as_of": "2026-11-20"
+   },
+   "hook": "\"This pedal costs $400. Can a $20 plugin match it?\"",
+   "script": [
+    "Blind A/B test of your pedal vs a cheap plugin",
+    "Viewers guess in comments before the reveal",
+    "Reveal + what you'd buy"
+   ],
+   "caption": "Blind test: guess which is which before the reveal.",
+   "hashtags": "#guitarpedals #plugins #blindtest #synth"
+  },
+  {
+   "id": "yt7",
+   "title": "Weird-feature hardware story",
+   "format": "gear",
+   "length": "8–12 min",
+   "modeled_on": {
+    "handle": "Hainbach",
+    "title": "This Synth From India Has No Filter (It Has Fuzz Instead)",
+    "views": 42307,
+    "url": "https://www.youtube.com/watch?v=eP2gXmGKvmw",
+    "as_of": "2026-11-20"
+   },
+   "hook": "\"This pedal has no ___ (it has ___ instead)\"",
+   "script": [
+    "Lead with the strange design choice",
+    "Play 3 musical examples",
+    "Build a short track using only that sound",
+    "End on what it taught you"
+   ],
+   "caption": "Strange design, great sound.",
+   "hashtags": "#synth #pedals #sounddesign #musicgear"
+  },
+  {
+   "id": "yt8",
+   "title": "Shorts: one surprising sound",
+   "format": "short",
+   "length": "20–40s",
+   "modeled_on": {
+    "handle": "andrewhuang",
+    "title": "Converting binary to a monster guitar riff",
+    "views": 45818,
+    "url": "https://www.youtube.com/shorts/JPwRmTkidYg",
+    "as_of": "2026-11-20"
+   },
+   "hook": "\"I turned my name into a beat\"",
+   "script": [
+    "0–2s: the idea as on-screen text",
+    "2–25s: build it on decks/synth",
+    "Last 5s: full loop with pedal on"
+   ],
+   "caption": "What should I turn into a beat next?",
+   "hashtags": "#shorts #producer #synth #beatmaking"
+  },
+  {
+   "id": "yt9",
+   "title": "Shorts: does it actually work?",
+   "format": "short",
+   "length": "15–30s",
+   "modeled_on": {
+    "handle": "LOOKMUMNOCOMPUTER",
+    "title": "DOES IT ACTUALLY WORK?",
+    "views": 79045,
+    "url": "https://www.youtube.com/shorts/w9H6ca3nqds",
+    "as_of": "2026-11-20"
+   },
+   "hook": "\"Does this $15 DJ hack actually work?\"",
+   "script": [
+    "Show the cheap hack/mod/DIY thing",
+    "Test it live",
+    "Clear yes/no verdict"
+   ],
+   "caption": "Worked better than I expected.",
+   "hashtags": "#shorts #diy #djhack #musicgear"
+  }
+ ]
+}
