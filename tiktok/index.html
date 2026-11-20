@@ -56,6 +56,7 @@ h2{font-size:30px;font-weight:900;margin:0 0 6px;letter-spacing:-.5px}
 .fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--pink),var(--purple))}
 .ideas{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px}
 .idea{background:var(--card);border:3px solid var(--ink);border-radius:24px;padding:16px;box-shadow:6px 6px 0 var(--ink);display:flex;flex-direction:column;gap:10px}
+.ideaimg{width:100%;aspect-ratio:9/16;max-height:420px;object-fit:cover;border-radius:16px;border:3px solid var(--ink)}
 .idea h3{margin:0;font-size:21px;font-weight:900}
 .hook{font-size:20px;font-weight:800;background:var(--lime);border-radius:14px;padding:10px 12px}
 .idea ol{margin:0;padding-left:22px}.idea li{margin:4px 0}
@@ -92,6 +93,7 @@ footer ul{padding-left:18px}
 <footer class="wrap" id="foot"></footer>
 <script src="../social-i18n.js"></script>
 <script>
+var ORIG={en:'✨ Original idea (not modelled on a specific post)',ru:'✨ Оригинальная идея (не по мотивам конкретного поста)',es:'✨ Idea original (no basada en una publicación concreta)',pt:'✨ Ideia original (não inspirada em um post específico)',fr:'✨ Idée originale (pas inspirée d\'une publication précise)',de:'✨ Eigene Idee (kein bestimmter Beitrag als Vorbild)',ja:'✨ オリジナルのアイデア（特定の投稿が元ではありません）',ko:'✨ 오리지널 아이디어 (특정 게시물을 참고하지 않음)',zh:'✨ 原创点子（并非参考某个具体内容）'};
 var t=SI.t, EMO={transition:'🔀',tutorial:'💡',build:'🛠️',gear:'🎛️',live:'🙌',release:'📣',other:'✨',short:'⚡'};
 function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
 function nav(cur){var q=SI.lang!=='en'?'?lang='+SI.lang:'';var b=[['../','nav_x','x'],['../instagram/','nav_ig','ig'],['../tiktok/','nav_tt','tt'],['../youtube/','nav_yt','yt']];
@@ -116,10 +118,10 @@ function render(d){
  var mx=Math.max.apply(null,d.formats.map(function(f){return f.median_views}).concat([1]));
  document.getElementById('fmtnote').textContent=t('k_median')+' · '+t('window',{n:d.window_days});
  document.getElementById('fmts').innerHTML=d.formats.map(function(f){return '<div class="frow"><div>'+EMO[f.key]+' '+esc(t('fmt_'+f.key))+'</div><div class="track"><div class="fill" style="width:'+Math.max(4,100*f.median_views/mx)+'%"></div></div><div>'+SI.num(f.median_views)+' <span class="small">· '+f.count+' '+esc(t('count'))+'</span></div></div>'}).join('');
- document.getElementById('ideas').innerHTML=d.ideas.map(function(x){var cap=x.caption+'\n\n'+x.hashtags;return '<article class="idea"><span class="chip">'+(EMO[x.format]||'✨')+' '+esc(t('fmt_'+x.format))+' · '+esc(x.length)+'</span><h3>'+esc(x.title)+'</h3>'+
+ document.getElementById('ideas').innerHTML=d.ideas.map(function(x){var cap=x.caption+'\n\n'+x.hashtags;return '<article class="idea">'+(x.image?'<img class="ideaimg" loading="lazy" src="'+esc(x.image)+'" alt="'+esc(x.image_alt||x.title)+'">':'')+'<span class="chip">'+(x.original?'🆕 ':'')+(EMO[x.format]||'✨')+' '+esc(t('fmt_'+x.format))+' · '+esc(x.length)+'</span><h3>'+esc(x.title)+'</h3>'+
   '<div class="hook">🎣 '+esc(x.hook)+'</div><div><b>'+esc(t('tt_copy_this'))+'</b><ol>'+x.script.map(function(s){return '<li>'+esc(s)+'</li>'}).join('')+'</ol></div>'+
   '<div class="cap"><b>'+esc(t('caption'))+':</b> '+esc(x.caption)+'<br><b>'+esc(t('hashtags'))+':</b> '+esc(x.hashtags)+'</div>'+copyBtn(cap)+
-  '<div class="meta">'+esc(t('modeled_on'))+': <a href="'+esc(x.modeled_on.url)+'" target="_blank" rel="noopener">@'+esc(x.modeled_on.handle)+' · '+esc(x.modeled_on.title)+'</a> · '+SI.num(x.modeled_on.views)+' '+esc(t('plays'))+' ('+esc(x.modeled_on.as_of)+')</div></article>'}).join('');
+  (x.modeled_on?'<div class="meta">'+esc(t('modeled_on'))+': <a href="'+esc(x.modeled_on.url)+'" target="_blank" rel="noopener">@'+esc(x.modeled_on.handle)+' · '+esc(x.modeled_on.title)+'</a> · '+SI.num(x.modeled_on.views)+' '+esc(t('plays'))+' ('+esc(x.modeled_on.as_of)+')</div>':'<div class="meta">'+esc(ORIG[SI.lang]||ORIG.en)+'</div>')+'</article>'}).join('');
  document.getElementById('roster').innerHTML=d.roster.map(function(r){return '<div class="li"><div class="n">'+r.rank+'</div><div><a href="'+esc(r.url)+'" target="_blank" rel="noopener"><b>@'+esc(r.handle)+'</b></a><div class="small">'+esc(r.name||'')+(r.error?' · '+esc(t('na')):'')+'</div></div>'+
   '<div class="s s2">'+SI.num(r.followers)+'<small>'+esc(t('followers'))+'</small></div><div class="s">'+SI.num(r.best_views)+'<small>'+esc(t('best'))+'</small></div></div>'}).join('');
  document.getElementById('foot').innerHTML='<h3>'+esc(t('limits_title'))+'</h3><ul>'+d.limits.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul><h3>'+esc(t('sources_title'))+'</h3><ul>'+d.sources.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul><p>'+esc(t('footer'))+'</p>';

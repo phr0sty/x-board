@@ -1,7 +1,29 @@
 {
  "updated": "2026-11-20",
- "note": "Drafts only. Nothing is posted automatically.",
+ "note": "Drafts only. Nothing is posted automatically. Ideas marked original are not modelled on a specific post.",
  "ideas": [
+  {
+   "id": "tt0",
+   "title": "Ninja DJ: stealth transition",
+   "format": "transition",
+   "length": "15–25s",
+   "original": true,
+   "modeled_on": null,
+   "image": "img/ninja-dj.svg",
+   "image_alt": "AI persona as a ninja DJ: black outfit, dark headband with tails, mask pulled down, gold-and-white headphones, hand over the mixer",
+   "hook": "\"Nobody saw the drop coming… 🥷\"",
+   "script": [
+    "0–2s: decks playing song A, empty frame, text on screen: 'shh… 🥷'",
+    "2–6s: you sneak in low from the side of the frame in the ninja look (black outfit, headband tails, mask down around the neck, gold-and-white headphones)",
+    "6–9s: freeze for a beat, look straight into the camera, slowly raise one hand",
+    "9–12s: karate-chop the crossfader exactly on the drop; quick zoom-in and a whoosh sound; the beat switches to song B",
+    "12–18s: nod to the new track, then vanish out of frame (jump cut); the decks keep playing",
+    "Optional twist: swing two synth pedals tied by their cable like nunchucks, then stomp one to drop a filter sweep into song B",
+    "End text: 'comment a song for the next ninja drop'"
+   ],
+   "caption": "stealth mode: ON 🥷🎧 which drop should i sneak into next?",
+   "hashtags": "#ninjadj #djtok #transition #rekordbox #synthtok #djtransition #dj"
+  },
   {
    "id": "tt1",
    "title": "Cheap gear stress test",
