@@ -14,7 +14,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p media
-          for prefix in tt-ninja-drop yt-decks-mix fb-synth-session; do
+          for prefix in tt-ninja-drop yt-decks-mix fb-synth-session tt-ninja-unmask-1120 yt-rekordbox-1120 fb-synth-knobs-1120; do
             src="media/src/${prefix}.mp4.b64"
             out="media/${prefix}.mp4"
             echo "Decoding ${src} -> ${out}"
@@ -28,7 +28,7 @@ jobs:
           done
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add media/tt-ninja-drop.mp4 media/yt-decks-mix.mp4 media/fb-synth-session.mp4
+          git add media/*.mp4
           if git diff --cached --quiet; then
             echo "No media changes to commit"
             exit 0
