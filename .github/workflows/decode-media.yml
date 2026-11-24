@@ -14,14 +14,14 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p media
-          for prefix in tt-ninja-drop yt-decks-mix fb-synth-session tt-ninja-unmask-1120 yt-rekordbox-1120 fb-synth-knobs-1120; do
-            src="media/src/${prefix}.mp4.b64"
-            out="media/${prefix}.mp4"
-            echo "Decoding ${src} -> ${out}"
+          for src in media/src/*.mp4.b64; do
+            [ -s "$src" ] || { echo "Skipping empty $src"; continue; }
+            out="media/$(basename "$src" .b64)"
+            echo "Decoding $src -> $out"
             base64 -d "$src" > "$out"
             header="$(dd if="$out" bs=1 skip=4 count=4 status=none)"
             if [ "$header" != "ftyp" ]; then
-              echo "Invalid mp4 header in ${out}: ${header}"
+              echo "Invalid mp4 header in $out: $header"
               exit 1
             fi
             ls -l "$out"
