@@ -1,28 +1,28 @@
 {
- "updated": "2026-11-20",
+ "updated": "2026-11-23",
  "note": "Drafts only. Nothing is posted automatically.",
  "ideas": [
   {
    "id": "yt1",
-   "title": "Best gear of the year (budget edition)",
-   "format": "gear",
+   "title": "I built it the long way",
+   "format": "build",
    "length": "10–14 min",
    "modeled_on": {
-    "handle": "andrewhuang",
-    "title": "The most innovative music tools of the year",
-    "views": 318816,
-    "url": "https://www.youtube.com/watch?v=tJOmw4eM2HI",
-    "as_of": "2026-11-20"
+    "handle": "LOOKMUMNOCOMPUTER",
+    "title": "I MADE AN ANALOG POLY SYNTH COMPLETELY ON BREADBOARD....",
+    "views": 68730,
+    "url": "https://www.youtube.com/watch?v=jHz3ho6LUOc",
+    "as_of": "2026-11-23"
    },
-   "hook": "\"These were the music tools that actually changed how I make music this year.\"",
+   "hook": "\"I built this the slow way, on the bench, with no kit.\"",
    "script": [
-    "Cold open: 5-second sound of each item back-to-back",
-    "Ranked list of 6–8 items you own or can try (decks, pedals, plugins, Rekordbox features)",
-    "For each: 20s demo, 1 pro, 1 con, price",
-    "Finish with your #1 and a call to comment theirs"
+    "Cold open: 5 seconds of the finished sound, then a cut to the messy bench",
+    "Walk through the build in 4 or 5 stages (parts, first tone, the problem, the fix, the jam)",
+    "One honest limit: what still doesn't work",
+    "Finish with a short track that uses only that sound"
    ],
-   "caption": "The tools that mattered most this year, from a DJ/synth-pedal setup. What was your #1?",
-   "hashtags": "#musicgear #djgear #synth #producer #gearoftheyear"
+   "caption": "Built on the bench, start to first song. Here's what actually broke.",
+   "hashtags": "#synth #diy #musicgear #build #sounddesign"
   },
   {
    "id": "yt2",
@@ -32,11 +32,11 @@
    "modeled_on": {
     "handle": "VenusTheory",
     "title": "The Stupid End of Spitfire LABS",
-    "views": 281725,
+    "views": 304309,
     "url": "https://www.youtube.com/watch?v=gxkQIaa41tM",
-    "as_of": "2026-11-20"
+    "as_of": "2026-11-23"
    },
-   "hook": "\"Everyone says this free/cheap tool is amazing. Here's the dumb part nobody mentions.\"",
+   "hook": "\"Everyone says this free/cheap tool is amazing. Here's the part nobody mentions.\"",
    "script": [
     "0:00 hook + bold claim",
     "0:30 what it promises",
@@ -49,47 +49,47 @@
   },
   {
    "id": "yt3",
-   "title": "\"The thing that IS the computer\" format",
+   "title": "A full set with no laptop",
    "format": "gear",
-   "length": "10–15 min",
+   "length": "10–14 min",
    "modeled_on": {
-    "handle": "DoctorMix",
-    "title": "The Audio Interface That IS the Computer",
-    "views": 225664,
-    "url": "https://www.youtube.com/watch?v=wGtxnDa0Zhk",
-    "as_of": "2026-11-20"
+    "handle": "digitaldjtips",
+    "title": "VirtualDJ With No Laptop: Hybrid DJ Ulti-Mix 4 Pro First Look",
+    "views": 70332,
+    "url": "https://www.youtube.com/watch?v=rOb5zj-z8O4",
+    "as_of": "2026-11-23"
    },
-   "hook": "\"Can I play a full DJ set with no laptop at all?\"",
+   "hook": "\"Can I play a full set with no laptop at all?\"",
    "script": [
-    "Show the standalone setup (or Rekordbox on the smallest device you have)",
-    "Play 3 short mixes",
-    "Show the limits: library, effects, latency",
-    "Verdict: would you gig with it?"
+    "Show the standalone or hybrid setup on the table, cables and all",
+    "Play 3 short mixes you would actually use",
+    "Show the limits: library, stems, effects, what happens when you want to reach for a file",
+    "Verdict: would you gig with it this weekend?"
    ],
-   "caption": "No laptop, full set. Did it hold up?",
-   "hashtags": "#djset #standalone #rekordbox #djgear"
+   "caption": "No laptop, full set. First look and a real-world verdict.",
+   "hashtags": "#djset #standalone #rekordbox #djgear #virtualdj"
   },
   {
    "id": "yt4",
-   "title": "You're doing X wrong (DJ fix)",
-   "format": "tutorial",
+   "title": "Standalone video DJ — does it actually work?",
+   "format": "gear",
    "length": "6–9 min + 1 Short",
    "modeled_on": {
     "handle": "digitaldjtips",
-    "title": "You're Doing The Echo Out Wrong (This Forgotten Button Fixes It)",
-    "views": 19826,
-    "url": "https://www.youtube.com/watch?v=hAWc4PQG6gM",
-    "as_of": "2026-11-20"
+    "title": "World's first standalone video DJ controller",
+    "views": 30066,
+    "url": "https://www.youtube.com/shorts/1WzMw-P6Pw8",
+    "as_of": "2026-11-23"
    },
-   "hook": "\"Your echo out sounds amateur. One button fixes it.\"",
+   "hook": "\"They say you can DJ video without a laptop. I tried it.\"",
    "script": [
-    "Play the bad version",
-    "Explain why (timing / filter / beat FX)",
-    "Show the fix slowly, then at full speed",
-    "Cut the 40-second version as a Short"
+    "Cold open: the claim, then your hands on the unit",
+    "Two real tests: a simple cut, then a transition with visuals in sync",
+    "Show where it breaks (sync, media, latency)",
+    "Cut a 25-second yes/no Short from the best and worst moment"
    ],
-   "caption": "The one-button echo-out fix. Short version on my channel.",
-   "hashtags": "#djtips #djtutorial #echoout #rekordbox"
+   "caption": "First look at standalone video DJing. Short version on the channel too.",
+   "hashtags": "#djgear #videodj #djcontroller #shorts #firstlook"
   },
   {
    "id": "yt5",
@@ -99,13 +99,13 @@
    "modeled_on": {
     "handle": "Loopop",
     "title": "Superlative SB-01 Review // Is there room for a premium analog SH-101 clone?",
-    "views": 12969,
+    "views": 48494,
     "url": "https://www.youtube.com/watch?v=rF2OfEAySbU",
-    "as_of": "2026-11-20"
+    "as_of": "2026-11-23"
    },
    "hook": "\"Is there room for another one of these?\"",
    "script": [
-    "Pick a just-announced controller, pedal or plugin update (e.g. a new Rekordbox or Live 13 feature)",
+    "Pick a just-announced controller, pedal or plugin update",
     "Upload within 24–48h of release",
     "Structure: what's new / 3 sound demos / who it's for / verdict",
     "Title with a question"
@@ -115,24 +115,25 @@
   },
   {
    "id": "yt6",
-   "title": "Price contrast title",
+   "title": "This thing is absolutely wild",
    "format": "gear",
    "length": "8–12 min",
    "modeled_on": {
-    "handle": "DoctorMix",
-    "title": "This Synth Costs $150,000. Thank God for Plugins",
-    "views": 73738,
-    "url": "https://www.youtube.com/watch?v=PAThL1gYwD0",
-    "as_of": "2026-11-20"
+    "handle": "RedMeansRecording",
+    "title": "Instrument X is Absolutely Wild",
+    "views": 36550,
+    "url": "https://www.youtube.com/watch?v=te_jjQFS5EM",
+    "as_of": "2026-11-23"
    },
-   "hook": "\"This pedal costs $400. Can a $20 plugin match it?\"",
+   "hook": "\"I didn't expect this sound to come out of this box.\"",
    "script": [
-    "Blind A/B test of your pedal vs a cheap plugin",
-    "Viewers guess in comments before the reveal",
-    "Reveal + what you'd buy"
+    "Cold open: the wildest 8 seconds, no intro",
+    "What it is, in one sentence",
+    "Three increasingly strange patches or scenes",
+    "One musical use in a real DJ or production context, then a verdict"
    ],
-   "caption": "Blind test: guess which is which before the reveal.",
-   "hashtags": "#guitarpedals #plugins #blindtest #synth"
+   "caption": "Absolutely wild. Here's what I actually used it for.",
+   "hashtags": "#synth #sounddesign #musicgear #producer #review"
   },
   {
    "id": "yt7",
@@ -142,9 +143,9 @@
    "modeled_on": {
     "handle": "Hainbach",
     "title": "This Synth From India Has No Filter (It Has Fuzz Instead)",
-    "views": 42307,
+    "views": 45515,
     "url": "https://www.youtube.com/watch?v=eP2gXmGKvmw",
-    "as_of": "2026-11-20"
+    "as_of": "2026-11-23"
    },
    "hook": "\"This pedal has no ___ (it has ___ instead)\"",
    "script": [
@@ -164,9 +165,9 @@
    "modeled_on": {
     "handle": "andrewhuang",
     "title": "Converting binary to a monster guitar riff",
-    "views": 45818,
+    "views": 49398,
     "url": "https://www.youtube.com/shorts/JPwRmTkidYg",
-    "as_of": "2026-11-20"
+    "as_of": "2026-11-23"
    },
    "hook": "\"I turned my name into a beat\"",
    "script": [
@@ -179,24 +180,24 @@
   },
   {
    "id": "yt9",
-   "title": "Shorts: does it actually work?",
+   "title": "Shorts: everything that has broken",
    "format": "short",
    "length": "15–30s",
    "modeled_on": {
     "handle": "LOOKMUMNOCOMPUTER",
-    "title": "DOES IT ACTUALLY WORK?",
-    "views": 79045,
-    "url": "https://www.youtube.com/shorts/w9H6ca3nqds",
-    "as_of": "2026-11-20"
+    "title": "ALL THE THINGS THAT HAVE BROKEN! Belgrave music hall Leeds tonight!",
+    "views": 13600,
+    "url": "https://www.youtube.com/shorts/plyDzkVCW3w",
+    "as_of": "2026-11-23"
    },
-   "hook": "\"Does this $15 DJ hack actually work?\"",
+   "hook": "\"Everything that has broken on this setup.\"",
    "script": [
-    "Show the cheap hack/mod/DIY thing",
-    "Test it live",
-    "Clear yes/no verdict"
+    "Rapid cuts of real failures: a cable, a jog wheel, a pedal, a crash",
+    "One-line text on each",
+    "End on the one thing that still works, or tonight's gig anyway"
    ],
-   "caption": "Worked better than I expected.",
-   "hashtags": "#shorts #diy #djhack #musicgear"
+   "caption": "Still playing tonight.",
+   "hashtags": "#shorts #djgear #tourlife #musicgear #djlife"
   }
  ]
 }

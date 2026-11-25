@@ -1,122 +1,81 @@
 {
- "updated": "2026-11-20",
+ "updated": "2026-11-23",
  "note": "Drafts only. Nothing is posted automatically.",
  "ideas": [
   {
    "id": "ig1",
-   "title": "The quiet backspin",
-   "format": "gear",
-   "length": "Reel · 12–18s",
+   "title": "If you know, you know",
+   "format": "transition",
+   "length": "Reel · 8–12s",
    "modeled_on": {
-    "handle": "djcarloatendido",
-    "title": "Cheap DJ Gear Backspin Test (TikTok signal)",
-    "views": 2000000,
-    "url": "https://www.tiktok.com/@djcarloatendido/video/7581948465505242376",
-    "as_of": "2026-11-20"
+    "handle": "peggygou",
+    "title": "If you know you know (TikTok signal)",
+    "views": 1200000,
+    "url": "https://www.tiktok.com/@peggygou/video/7708801442135493910",
+    "as_of": "2026-11-23"
    },
-   "hook": "One line, lower third, serif: \"Tested.\"",
+   "hook": "One line, lower third, serif: \"If you know.\"",
    "script": [
-    "Overhead shot, warm low light, deck and hands only",
-    "One clean backspin into the drop",
-    "Hold the final frame for 2s; no talking"
+    "Still camera, warm low light, hands and decks only",
+    "One small cue, then the drop — no talking",
+    "Hold the last frame for 2s"
    ],
-   "caption": "Tested. Approved.",
-   "hashtags": "#djgear #djlife #rekordbox #analoguelife #studioaesthetic"
+   "caption": "If you know, you know.",
+   "hashtags": "#djlife #housemusic #studioaesthetic #djreels #ifyouknowyouknow"
   },
   {
    "id": "ig2",
-   "title": "Carousel: the setup, itemised",
-   "format": "gear",
-   "length": "Carousel · 6–8 slides",
+   "title": "Not a club",
+   "format": "live",
+   "length": "Reel · 12–20s",
    "modeled_on": {
-    "handle": "andrewhuang",
-    "title": "The most innovative music tools of the year (YouTube signal)",
-    "views": 318816,
-    "url": "https://www.youtube.com/watch?v=tJOmw4eM2HI",
-    "as_of": "2026-11-20"
+    "handle": "domdolla",
+    "title": "OUT NOW 📺 my set recorded live from INOTA POWERPLANT 🔋 link in bio 📡☢️🌪️ (TikTok signal)",
+    "views": 536800,
+    "url": "https://www.tiktok.com/@domdolla/video/7709297334714109214",
+    "as_of": "2026-11-23"
    },
-   "hook": "Slide 1: \"The setup. Itemised.\"",
+   "hook": "Text: \"Not a club.\"",
    "script": [
-    "Slide 1: full desk, clean, top-down",
-    "Slides 2–6: one item each on a neutral background, name + one-line why",
-    "Last slide: 'Save for your next upgrade'"
+    "Open on the unusual room (wide, architectural)",
+    "Cut to the decks, already running",
+    "End on the wide shot again once the drop hits"
    ],
-   "caption": "Everything on the desk, and why it earned its place.",
-   "hashtags": "#studiosetup #djsetup #synthpedals #musicgear #desksetup"
+   "caption": "Recorded in a room that isn't a club.",
+   "hashtags": "#djset #liveset #djlife #cinematic #electronicmusic"
   },
   {
    "id": "ig3",
-   "title": "Dry / wet, side by side",
+   "title": "No laptop. Video too.",
    "format": "gear",
    "length": "Reel · 10–15s",
    "modeled_on": {
-    "handle": "andrewhuang",
-    "title": "Verso Instruments clip (TikTok signal)",
-    "views": 1700000,
-    "url": "https://www.tiktok.com/@andrewhuang/video/7281709861451074822",
-    "as_of": "2026-11-20"
+    "handle": "digitaldjtips",
+    "title": "World's first standalone video DJ controller (YouTube signal)",
+    "views": 30066,
+    "url": "https://www.youtube.com/shorts/1WzMw-P6Pw8",
+    "as_of": "2026-11-23"
    },
-   "hook": "Text: \"Dry.\" … then \"Wet.\"",
+   "hook": "Text: \"No laptop.\"",
    "script": [
-    "Split screen or hard cut: dry loop, then pedal on",
-    "Macro shot of one knob turning",
-    "Loop seamlessly so it replays"
+    "Product-style shot of the controller, then it comes to life",
+    "One transition with the visuals in frame",
+    "Hard cut to a yes or no at the end"
    ],
-   "caption": "Dry or wet.",
-   "hashtags": "#synthpedals #guitarpedals #sounddesign #ambient"
+   "caption": "Standalone. I tried it.",
+   "hashtags": "#djgear #djcontroller #videodj #gearreview #djlife"
   },
   {
    "id": "ig4",
-   "title": "One-take mix, black & white",
-   "format": "transition",
-   "length": "Reel · 30–45s",
-   "modeled_on": {
-    "handle": "jameshype",
-    "title": "The unedited version, no cuts… (TikTok signal)",
-    "views": 1940,
-    "url": "https://www.tiktok.com/@jameshype/video/7710331878917623072",
-    "as_of": "2026-11-20"
-   },
-   "hook": "Text: \"No cuts.\"",
-   "script": [
-    "Monochrome grade, single angle",
-    "One continuous transition between two tracks",
-    "End on hands leaving the mixer"
-   ],
-   "caption": "One take.",
-   "hashtags": "#djmix #onetake #housemusic #vinylvibes"
-  },
-  {
-   "id": "ig5",
-   "title": "Stems, explained in 3 frames",
-   "format": "tutorial",
-   "length": "Carousel · 3–5 slides",
-   "modeled_on": {
-    "handle": "djcarloatendido",
-    "title": "using Stems for DJing has three big problems… (TikTok signal)",
-    "views": 52300,
-    "url": "https://www.tiktok.com/@djcarloatendido/video/7675498091058892050",
-    "as_of": "2026-11-20"
-   },
-   "hook": "Slide 1: \"Stems. Three rules.\"",
-   "script": [
-    "One rule per slide, big serif type on cream",
-    "Final slide: screen shot of your Rekordbox stems layout"
-   ],
-   "caption": "Three rules for stems. Save it.",
-   "hashtags": "#rekordbox #stems #djtips #djeducation"
-  },
-  {
-   "id": "ig6",
    "title": "Crowd moment, cinematic",
    "format": "live",
    "length": "Reel · 8–15s",
    "modeled_on": {
     "handle": "johnsummit",
-    "title": "been wanting to share this with you guys… (TikTok signal)",
-    "views": 1100000,
+    "title": "been wanting to share this with you guys for a while now… (TikTok signal)",
+    "views": 1300000,
     "url": "https://www.tiktok.com/@johnsummit/video/7709917484056317214",
-    "as_of": "2026-11-20"
+    "as_of": "2026-11-23"
    },
    "hook": "No text for the first 3 seconds; let the drop hit.",
    "script": [
@@ -124,49 +83,91 @@
     "Slow-mo the drop (50%), then real-time",
     "Single word caption overlay at the end"
    ],
-   "caption": "Tonight.",
+   "caption": "Been saving this one.",
    "hashtags": "#djlife #nightlife #housemusic #clubculture"
   },
   {
-   "id": "ig7",
-   "title": "Before / after: the echo out",
-   "format": "tutorial",
-   "length": "Reel · 15–25s",
+   "id": "ig5",
+   "title": "The city that made the set",
+   "format": "live",
+   "length": "Carousel · 5–7 slides  or  Reel · 20s",
    "modeled_on": {
-    "handle": "digitaldjtips",
-    "title": "You're Doing The Echo Out Wrong (YouTube signal)",
-    "views": 19826,
-    "url": "https://www.youtube.com/watch?v=hAWc4PQG6gM",
-    "as_of": "2026-11-20"
+    "handle": "johnsummit",
+    "title": "being a dj living in miami has always been the dream for me. this city has been an endless source of inspiration every year with music week and easily has the best club culture in america. here is where u can break new records, experiment with unheard sounds, and discover the best up and coming talent while dancing til the sun comes up. i remember first playing human at space and shiver at floyd to now playing those records at back to back sold out nights at the kaseya center where the heat play 🤯 it has seriously been the craziest journey ever.. this weekend meant everything to me miami thank u for welcoming me with open arms i am so grateful to call this city home. (TikTok signal)",
+    "views": 203400,
+    "url": "https://www.tiktok.com/@johnsummit/video/7711111474663509278",
+    "as_of": "2026-11-23"
    },
-   "hook": "Text: \"Before.\" / \"After.\"",
+   "hook": "Slide 1 or first frame: the city name, nothing else.",
    "script": [
-    "Play the sloppy echo out",
-    "Then the clean one",
-    "Close-up of the one button that changes it"
+    "A few stills or short clips of the city and the room",
+    "One short line per slide or lower-third: first gig, a record you broke in, the room now",
+    "Last frame: 'this weekend meant everything'"
    ],
-   "caption": "The difference is one button.",
-   "hashtags": "#djtips #djskills #rekordbox"
+   "caption": "This city made the set.",
+   "hashtags": "#djlife #nightlife #housemusic #thankyou #djreels"
+  },
+  {
+   "id": "ig6",
+   "title": "One crazy night",
+   "format": "live",
+   "length": "Reel · 8–15s",
+   "modeled_on": {
+    "handle": "davidguetta",
+    "title": "Damn, girl 💥 Crazy night at EDC Orlando  (TikTok signal)",
+    "views": 1200000,
+    "url": "https://www.tiktok.com/@davidguetta/video/7706548378846383393",
+    "as_of": "2026-11-23"
+   },
+   "hook": "Text after 2s: \"Crazy night.\"",
+   "script": [
+    "Three cuts max: lights, hands, the room",
+    "Let one vocal or drop carry the whole reel",
+    "End on a still of the crowd or the sky"
+   ],
+   "caption": "Crazy night.",
+   "hashtags": "#djlife #festival #nightlife #housemusic #edmlife"
+  },
+  {
+   "id": "ig7",
+   "title": "Turn something into a riff",
+   "format": "other",
+   "length": "Reel · 20–30s",
+   "modeled_on": {
+    "handle": "andrewhuang",
+    "title": "Converting binary to a monster guitar riff (YouTube signal)",
+    "views": 49398,
+    "url": "https://www.youtube.com/shorts/JPwRmTkidYg",
+    "as_of": "2026-11-23"
+   },
+   "hook": "Text: \"I turned my name into a beat.\"",
+   "script": [
+    "0–2s: the idea, big type",
+    "2–22s: build it on decks or a synth, no jump-cut chaos",
+    "Last 5s: the loop, pedal on"
+   ],
+   "caption": "What should I turn into a beat next?",
+   "hashtags": "#producer #synth #beatmaking #reels #sounddesign"
   },
   {
    "id": "ig8",
-   "title": "Gear still life",
+   "title": "Everything that has broken",
    "format": "gear",
-   "length": "Single photo + Reel cover",
+   "length": "Reel · 12–20s  or  carousel",
    "modeled_on": {
-    "handle": "Hainbach",
-    "title": "This Synth From India Has No Filter (YouTube signal)",
-    "views": 42307,
-    "url": "https://www.youtube.com/watch?v=eP2gXmGKvmw",
-    "as_of": "2026-11-20"
+    "handle": "LOOKMUMNOCOMPUTER",
+    "title": "ALL THE THINGS THAT HAVE BROKEN! Belgrave music hall Leeds tonight! (YouTube signal)",
+    "views": 13600,
+    "url": "https://www.youtube.com/shorts/plyDzkVCW3w",
+    "as_of": "2026-11-23"
    },
-   "hook": "Caption opens: \"No filter. Only fuzz.\"",
+   "hook": "Text: \"Everything that has broken.\"",
    "script": [
-    "Shoot one pedal like a product ad: hard side light, seamless background",
-    "Post as a photo, then a 7-second Reel of its sound"
+    "Quick stills or cuts of real failures, one object per beat",
+    "Last frame: the setup anyway, ready to go out"
    ],
-   "caption": "Objects that make noise.",
-   "hashtags": "#pedalboard #synth #stilllife #musicgear"
+   "caption": "Still playing tonight.",
+   "hashtags": "#djgear #tourlife #musicgear #studioaesthetic #djlife"
   }
  ]
 }
