@@ -14,18 +14,35 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p media
-          for src in media/src/*.mp4.b64; do
-            [ -s "$src" ] || { echo "Skipping empty $src"; continue; }
-            out="media/$(basename "$src" .b64)"
-            echo "Decoding $src -> $out"
-            base64 -d "$src" > "$out"
+
+          decode_and_check() {
+            local out="$1"
             header="$(dd if="$out" bs=1 skip=4 count=4 status=none)"
             if [ "$header" != "ftyp" ]; then
               echo "Invalid mp4 header in $out: $header"
               exit 1
             fi
             ls -l "$out"
+          }
+
+          shopt -s nullglob
+          for src in media/src/*.mp4.b64; do
+            [ -s "$src" ] || { echo "Skipping empty $src"; continue; }
+            out="media/$(basename "$src" .b64)"
+            echo "Decoding $src -> $out"
+            base64 -d "$src" > "$out"
+            decode_and_check "$out"
           done
+
+          for dir in media/src/*.mp4.b64.parts; do
+            [ -d "$dir" ] || continue
+            base="$(basename "$dir" .parts)"
+            out="media/$(basename "$base" .b64)"
+            echo "Concatenating $dir -> $out"
+            cat "$dir"/* | base64 -d > "$out"
+            decode_and_check "$out"
+          done
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add media/*.mp4
