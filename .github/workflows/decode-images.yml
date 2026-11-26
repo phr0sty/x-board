@@ -1,4 +1,4 @@
-name: Decode persona images
+name: Decode preview images
 
 on:
   workflow_dispatch:
@@ -10,28 +10,28 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Decode base64 sources into media jpgs
+      - name: Decode base64 jpg sources into media
         run: |
           set -euo pipefail
           mkdir -p media
+          shopt -s nullglob
 
-          decode_and_check() {
+          decode_jpg() {
             local out="$1"
-            header="$(python3 -c "print(open('$out','rb').read(3).hex())")"
-            if [ "$header" != "ffd8ff" ]; then
-              echo "Invalid jpeg header in $out: $header"
+            header="$(dd if="$out" bs=1 count=3 status=none)"
+            if [ "$header" != $'\xff\xd8\xff' ]; then
+              echo "Invalid jpeg header in $out"
               exit 1
             fi
             ls -l "$out"
           }
 
-          shopt -s nullglob
           for src in media/src/*.jpg.b64; do
-            [ -s "$src" ] || { echo "Skipping empty $src"; continue; }
+            [ -s "$src" ] || continue
             out="media/$(basename "$src" .b64)"
             echo "Decoding $src -> $out"
             base64 -d "$src" > "$out"
-            decode_and_check "$out"
+            decode_jpg "$out"
           done
 
           for dir in media/src/*.jpg.b64.parts; do
@@ -40,7 +40,7 @@ jobs:
             out="media/$(basename "$base" .b64)"
             echo "Concatenating $dir -> $out"
             cat "$dir"/* | base64 -d > "$out"
-            decode_and_check "$out"
+            decode_jpg "$out"
           done
 
           git config user.name "github-actions[bot]"
@@ -50,5 +50,5 @@ jobs:
             echo "No media changes to commit"
             exit 0
           fi
-          git commit -m "Add HSR card preview images to media/ for Buffer hosting"
+          git commit -m "Add SH6 card preview sheets to media/"
           git push
